@@ -13,6 +13,7 @@ import 'package:flutteristas/pages/product_page.dart';
 import 'package:jaspr/components.dart';
 import 'package:jaspr/html.dart';
 import 'package:jaspr_router/jaspr_router.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 final routes = [
   WelcomePage.route,

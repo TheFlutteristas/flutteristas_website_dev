@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:jaspr/components.dart';
 import 'package:jaspr/html.dart';
 
@@ -19,6 +20,14 @@ class ProductLayout extends StatelessComponent {
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
+    DatabaseReference starCountRef = FirebaseDatabase.instance.ref('Agenda');
+    starCountRef.onValue.listen((DatabaseEvent event) {
+      final data = event.snapshot.value;
+      print(data);
+      //the following method is showing an error, I need to check it.
+      // updateStarCount(data);
+    });
+
     yield Column(
       children: [
         Spacer(height: Unit.em(0.5)),
@@ -77,7 +86,10 @@ class ProductLayout extends StatelessComponent {
               ),
             ]),
             [
-              p([text('Made with a single codebase using the Flutter SDK by Google')]),
+              p([
+                text(
+                    'Made with a single codebase using the Flutter SDK by Google')
+              ]),
               div([
                 a(
                   href: 'https://flutter.dev/',
@@ -99,6 +111,19 @@ class ProductLayout extends StatelessComponent {
                   )
                 ],
               ),
+              Spacer(height: Unit.em(1)),
+              // p(
+              //   styles: Styles.text(
+              //     fontSize: Unit.rem(0.8),
+              //     color: Colors.gray,
+              //   ),
+              //   [
+              //     text(
+              //       agenda,
+              //       rawHtml: true,
+              //     )
+              //   ],
+              // ),
             ],
           ),
       ],
