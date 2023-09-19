@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
-/*************************************************************
-*                                       selection
+/* @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&family=Rosarivo:ital@0;1&display=swap');
+/*                                       selection
 *************************************************************/
 ::selection {
   color: white;
@@ -18,7 +17,8 @@ body {
   /* height: 100%; */
   margin: 0;
   padding: 0;
-  font-family: "Raleway", "Arial", "Helvetica", sans-serif;
+  font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+  font-size: 16px;
 }
 
 /*************************************************************
@@ -35,18 +35,19 @@ header > div {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  justify-content: space-between;
 }
 
 .social-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 
 .social-media {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 200px;
+gap:10px;
 }
 
 .top-bar {
@@ -70,6 +71,7 @@ header > div {
   background: var(--m-3-sys-dark-primary, #cdbdff);
   color: var(--m-3-sys-dark-on-primary, #370095);
   padding: 10px 24px;
+  font-size: 16px;
 }
 .follow-us {
   color: #dfd5ec;
@@ -173,7 +175,7 @@ nav ul {
   margin: 0;
   width: 100%;
   color: #fff;
-  font-family: "Quicksand", "Tahoma", "Arial", sans-serif;
+  font-family: "Roboto", "Tahoma", "Arial", sans-serif;
 }
 
 /*************************************** adjusting screen size */
@@ -269,7 +271,7 @@ div #post-content {
 h1 {
   font-size: 2rem;
   font-weight: normal;
-  font-family: "Quicksand", "Tahoma", "Arial", sans-serif;
+  font-family: "Rosarivo", serif;
 }
 
 /*************************************************************

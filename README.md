@@ -7,16 +7,17 @@ We utilize [Jaspr](https://pub.dev/packages/jaspr) to provide a more Flutter cen
 
 ## Prerequisites
 
-Install the [webdev tool](https://dart.dev/tools/webdev)
+To get started simply activate the jaspr command line tool:
+
 
 ```sh
-dart pub global activate webdev
+dart pub global activate jaspr_cli
 ```
 
 ## Run locally with
 
 ```sh
-webdev serve --auto refresh
+jaspr serve
 ```
 
 ## Debugging
@@ -32,6 +33,6 @@ or you use devtools [Debugging Web Info](https://dart.dev/web/debugging)
 ## Build and Deploy
 
 ```sh
-webdev build
+jasper build
 firebase deploy
 ```
