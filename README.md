@@ -7,17 +7,16 @@ We utilize [Jaspr](https://pub.dev/packages/jaspr) to provide a more Flutter cen
 
 ## Prerequisites
 
-To get started simply activate the jaspr command line tool:
+Install the webdev tool
 
 
 ```sh
-dart pub global activate jaspr_cli
-```
+dart pub global activate webdev```
 
 ## Run locally with
 
 ```sh
-jaspr serve
+webdev serve --auto refresh
 ```
 
 ## Debugging
