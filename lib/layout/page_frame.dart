@@ -99,31 +99,31 @@ class _PageFrameState extends State<PageFrame> {
             classes: ['social-icon'],
             src: '/images/Linkedin.svg',
           )
-        ], href: '#'),
+        ], href: 'https://www.linkedin.com/company/flutteristas/'),
         a([
           img(
             classes: ['social-icon'],
             src: '/images/Twitter.svg',
           )
-        ], href: '#'),
+        ], href: 'https://twitter.com/flutteristas'),
         a([
           img(
             classes: ['social-icon'],
             src: '/images/Mastodon.svg',
           )
-        ], href: '#'),
+        ], href: 'https://fluttercommunity.social/@Flutteristas'),
         a([
           img(
             classes: ['social-icon'],
             src: '/images/instagram.svg',
           )
-        ], href: '#'),
+        ], href: 'https://www.instagram.com/flutteristas/'),
         a([
           img(
             classes: ['social-icon'],
             src: '/images/youtube.svg',
           )
-        ], href: '#')
+        ], href: 'https://www.youtube.com/@Flutteristas')
       ])
     ]);
   }
