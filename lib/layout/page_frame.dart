@@ -32,15 +32,7 @@ class _PageFrameState extends State<PageFrame> {
   }
 
   void _updateTitle() {
-    // NOTE: this should work, bug in Jaspr see https://github.com/schultek/jaspr/pull/110
-    // _title = Router.of(context).matchList.title;
-    // Instead we are fixing it inline here as a workaround
-    final matches = Router.of(context).matchList.matches;
-    _title = matches.reversed.fold(
-      null,
-      (prev, match) =>
-          prev ?? (match.route is Route ? (match.route as Route).title : null),
-    );
+    _title = Router.of(context).matchList.title;
     if (_title case String title) {
       document.title = '$title :: Flutteristas';
     }
@@ -78,9 +70,7 @@ class _PageFrameState extends State<PageFrame> {
         ]),
         footer([
           followUsSection(),
-          p([
-            text('Copyright © 2023 Flutteristas.org.  All rights reserved. ')
-          ]),
+          p([text('Copyright © 2023 Flutteristas.org.  All rights reserved. ')]),
         ]),
       ],
     );
