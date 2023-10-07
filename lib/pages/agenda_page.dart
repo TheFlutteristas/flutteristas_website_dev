@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:html';
 
 import 'package:intl/intl.dart';
 import 'package:jaspr/components.dart';
@@ -7,22 +6,22 @@ import 'package:jaspr/html.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 import 'package:http/http.dart' as http;
 
-class AgendaPage extends StatelessComponent {
-  const AgendaPage({super.key});
-
-  static final route = Route(
-    path: '/agenda',
-    title: 'Agenda',
-    builder: (context, state) => AgendaPage(),
-  );
-
-  @override
-  Iterable<Component> build(BuildContext context) sync* {
-    yield AgendaTalkList(
-      projectId: 'flutteristas-website-dev-default-rtdb',
-    );
-  }
-}
+// class AgendaPage extends StatelessComponent {
+//   const AgendaPage({super.key});
+//
+//   static final route = Route(
+//     path: '/agenda',
+//     title: 'Agenda',
+//     builder: (context, state) => AgendaPage(),
+//   );
+//
+//   @override
+//   Iterable<Component> build(BuildContext context) sync* {
+//     yield AgendaTalkList(
+//       projectId: 'flutteristas-website-dev-default-rtdb',
+//     );
+//   }
+// }
 
 class AgendaTalkList extends StatefulComponent {
   const AgendaTalkList({
@@ -80,15 +79,18 @@ class _AgendaState extends State<AgendaTalkList> {
             [
               p(
                 [
-                  text('Title:'),
+                  text('Title: '),
                   strong([text(item.title)]),
+                  br(),
+                  text('Speaker: '),
+                  strong([text(item.speaker)]),
                   br(),
                   text(item.description),
                   br(),
                   text(
-                    'On at: '
-                    '${DateFormat.Hms().format(item.time)} on '
-                    '${DateFormat.yMMMd().format(item.time)}',
+                    'at: '
+                    //'${DateFormat.yMMMd().format(item.time)} at '
+                    '${DateFormat.Hms().format(item.time)} UTC',
                   ),
                 ],
               ),
@@ -103,17 +105,20 @@ class _AgendaState extends State<AgendaTalkList> {
 class AgendaItem {
   const AgendaItem({
     required this.title,
+    required this.speaker,
     required this.description,
     required this.time,
   });
 
   final String title;
+  final String speaker;
   final String description;
   final DateTime time;
 
   static AgendaItem fromJson(Map<String, dynamic> json) {
     return AgendaItem(
       title: json['title'] as String,
+      speaker: json['speaker'] as String,
       description: json['description'] as String,
       time: DateTime.parse(json['time'] as String),
     );

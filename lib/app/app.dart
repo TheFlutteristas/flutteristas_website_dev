@@ -1,8 +1,10 @@
 import 'package:flutteristas/layout/page_frame.dart';
-import 'package:flutteristas/pages/agenda_page.dart';
+//import 'package:flutteristas/pages/agenda_page.dart';
+import 'package:flutteristas/pages/code_of_conduct.dart';
 import 'package:flutteristas/pages/column2_page.dart';
 import 'package:flutteristas/pages/column3_page.dart';
-import 'package:flutteristas/pages/contact_us_page.dart';
+//import 'package:flutteristas/pages/contact_us_page.dart';
+import 'package:flutteristas/pages/flutteristas_conference.dart';
 import 'package:flutteristas/pages/follow_us_page.dart';
 import 'package:flutteristas/pages/not_found_page.dart';
 import 'package:flutteristas/pages/privacy_page.dart';
@@ -17,7 +19,8 @@ import 'package:jaspr_router/jaspr_router.dart';
 
 final routes = [
   WelcomePage.route,
-  AgendaPage.route,
+  FlutteristasConferencePage.route,
+  //AgendaPage.route,
   TwoSectionPage.route,
   Column2Page.route,
   Column3Page.route,
@@ -25,7 +28,8 @@ final routes = [
   ProductPageOne.route,
   ProductPageWithNote.route,
   FollowUsPage.route,
-  ContactUsPage.route,
+  //ContactUsPage.route,
+  CodeOfConduct.route,
   PrivacyPolicyPage.route,
 ];
 
