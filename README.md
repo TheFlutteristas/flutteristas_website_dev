@@ -32,6 +32,6 @@ or you use devtools [Debugging Web Info](https://dart.dev/web/debugging)
 ## Build and Deploy
 
 ```sh
-jasper build
+webdev build
 firebase deploy
 ```
