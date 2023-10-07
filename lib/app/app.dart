@@ -1,4 +1,5 @@
 import 'package:flutteristas/layout/page_frame.dart';
+import 'package:flutteristas/pages/agenda_page.dart';
 import 'package:flutteristas/pages/column2_page.dart';
 import 'package:flutteristas/pages/column3_page.dart';
 import 'package:flutteristas/pages/contact_us_page.dart';
@@ -16,6 +17,7 @@ import 'package:jaspr_router/jaspr_router.dart';
 
 final routes = [
   WelcomePage.route,
+  AgendaPage.route,
   TwoSectionPage.route,
   Column2Page.route,
   Column3Page.route,
