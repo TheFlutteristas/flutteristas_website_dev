@@ -1,5 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&family=Rosarivo:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&family=Montserrat:ital@0;1&display=swap');
 /*                                       selection
 *************************************************************/
 ::selection {
@@ -271,7 +271,7 @@ div #post-content {
 h1 {
   font-size: 2rem;
   font-weight: normal;
-  font-family: "Rosarivo", serif;
+  font-family: "Montserrat", serif;
 }
 
 /*************************************************************
