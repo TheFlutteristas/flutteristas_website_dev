@@ -49,7 +49,13 @@ class _PageFrameState extends State<PageFrame> {
               'top-bar'
             ], [
               followUsSection(),
-              button([text('Join our community')])
+              a(
+                classes: ['button'],
+                href:
+                    'https://docs.google.com/forms/d/e/1FAIpQLScR2hQ44u_zxgpOaxcZZAnOmVZoIllehX8Iv9HKot2KmIMxzA/viewform',
+                target: Target.blank,
+                [text('Join our community')],
+              )
             ]),
           ]),
           div([
@@ -64,13 +70,15 @@ class _PageFrameState extends State<PageFrame> {
         article([
           div(id: 'post-content', [
             if (_title case String title) //
-              h1([text(title)]),
+              h1(classes: [title], [text(title)]),
             component.child,
           ]),
         ]),
         footer([
           followUsSection(),
-          p([text('Copyright © 2023 Flutteristas.org.  All rights reserved. ')]),
+          p([
+            text('Copyright © 2023 Flutteristas.org.  All rights reserved. ')
+          ]),
         ]),
       ],
     );
@@ -93,7 +101,7 @@ class _PageFrameState extends State<PageFrame> {
         a([
           img(
             classes: ['social-icon'],
-            src: '/images/Twitter.svg',
+            src: '/images/x-logo.svg',
           )
         ], href: 'https://twitter.com/flutteristas'),
         a([
@@ -113,7 +121,13 @@ class _PageFrameState extends State<PageFrame> {
             classes: ['social-icon'],
             src: '/images/youtube.svg',
           )
-        ], href: 'https://www.youtube.com/@Flutteristas')
+        ], href: 'https://www.youtube.com/@Flutteristas'),
+        a([
+          img(
+            classes: ['social-icon'],
+            src: '/images/github-color-svgrepo-com.svg',
+          )
+        ], href: 'https://github.com/TheFlutteristas')
       ])
     ]);
   }

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,400&family=Montserrat:ital@0;1&display=swap');
+
 /*                                       selection
 *************************************************************/
 ::selection {
@@ -28,7 +29,7 @@ header {
   padding: 5px 20px 20px 20px;
 }
 
-header > div {
+header>div {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -46,7 +47,7 @@ header > div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-gap:10px;
+  gap: 10px;
 }
 
 .top-bar {
@@ -60,7 +61,7 @@ gap:10px;
   margin-bottom: 1em;
 }
 
-.top-bar button {
+.top-bar .button {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +72,9 @@ gap:10px;
   color: var(--m-3-sys-dark-on-primary, #370095);
   padding: 5px 12px;
   font-size: 14px;
+  text-decoration: none;
 }
+
 .follow-us {
   color: #dfd5ec;
   width: 300px;
@@ -102,7 +105,7 @@ gap:10px;
   nav li a.current {
     border: none;
     border-radius: 0;
-}
+  }
 }
 
 /*************************************************************
@@ -191,7 +194,7 @@ nav ul {
     transition: max-height 0.25s ease-in-out;
   }
 
-  .toggle:checked + .menu-toggle + ul {
+  .toggle:checked+.menu-toggle+ul {
     max-height: 600px;
   }
 
@@ -230,7 +233,7 @@ nav li a:active {
 
 nav li a.current {
   background-color: rgb(255, 255, 255, 0.3);
-    border-bottom: 1px solid #e8ddff;
+  border-bottom: 1px solid #e8ddff;
 
 }
 
@@ -263,6 +266,7 @@ div #post-content {
   max-width: 1200px;
   width: 100%;
 }
+
 #post-content a {
   font-weight: bold;
   text-decoration: underline;
@@ -272,6 +276,29 @@ div #post-content {
   text-decoration: none;
 }
 
+.hero-button {
+  padding: 10px 24px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 100px;
+  background: var(--m-3-sys-light-primary, #6745C7);
+  font-size: 18px;
+  color: #FFFFFF;
+  font-weight: 400 !important;
+}
+
+.hero-button:link {
+  text-decoration: none !important;
+}
+
+.hero-button:hover {
+  color: #F5EEFF;
+}
+
 /*************************************************************
 *                                        headers
 *************************************************************/
@@ -279,6 +306,29 @@ h1 {
   font-size: 2rem;
   font-weight: normal;
   font-family: "Montserrat", serif;
+}
+
+h2 {
+  font-size: 1.75em;
+  font-weight: normal;
+  font-family: "Montserrat", serif;
+  border-left: 5px solid #4e29ae;
+  padding-left: 5px;
+}
+
+p.hero-text {
+  font-size: 2.25em;
+  letter-spacing: -1px;
+}
+
+.hero-section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  gap: 20px;
+}
+
+h1.Home {
+  display: none;
 }
 
 /*************************************************************
@@ -362,6 +412,7 @@ div #column-items-2-375-cols {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 /*************************************************************
 *                                 3 column items
 *************************************************************/
@@ -460,6 +511,8 @@ div #product-items {
     justify-content: center;
   }
 
+
+
   .product-layout-links a:not(first-child) {
     margin-left: 2em;
   }
@@ -488,6 +541,16 @@ div #product-items {
   .product-layout-links a:not(first-child) {
     margin-top: 1.5em;
   }
+
+  .join-layout .arrow-1 {
+    margin-top: -50px !important;
+    margin-bottom: 20px;
+  }
+
+  .join-layout .arrow-2 {
+    margin-bottom: -10px !important;
+  }
+
 }
 
 /*************************************************************
@@ -512,18 +575,19 @@ div #welcome-items {
   div #welcome-items {
     grid-template-columns: repeat(1, 1fr) !important;
   }
+
   .follow-us {
     flex-direction: column;
-}
+  }
 
-.social-icon {
+  .social-icon {
     width: 16px;
     height: 16px;
-}
+  }
 
-.top-bar button {
-  font-size: 12px;
-}
+  .top-bar button {
+    font-size: 12px;
+  }
 }
 
 /*************************************************************
@@ -550,4 +614,129 @@ div #welcome-items {
 
 .welcome-item a:hover {
   font-weight: bold !important;
+}
+
+
+/*************************************************************
+*                                   Home join section
+*************************************************************/
+
+.join-layout {
+  padding: 1.25em;
+  margin: 50px auto;
+  border: 1px solid #CAC4CF;
+  border-radius: 14px;
+  background: rgb(232, 221, 255);
+  background: linear-gradient(333deg, rgba(232, 221, 255, 1) 28%, rgba(251, 236, 255, 1) 70%);
+  font-size: 18px;
+  gap: 20px;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.join-item {
+  padding-top: 50px;
+  align-items: center;
+}
+
+.join-section {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.join-section img {
+  max-width: 200px;
+}
+
+.join-layout .arrow-1 {
+  margin-top: -100px;
+}
+
+.join-layout .arrow-2 {
+  margin-bottom: -100px;
+}
+
+/*************************************************************
+*                                    adjust heading size for mobile
+*************************************************************/
+@media only screen and (max-width: 60em) {
+  h2 {
+    font-size: 2em;
+  }
+}
+
+
+/*************************************************************
+*                                    adjust join section for mobile
+*************************************************************/
+
+@media only screen and (max-width:52.5em) {
+  .join-layout {
+    flex-direction: column;
+  }
+}
+
+/*************************************************************
+*                                    adjust hero section for mobile
+*************************************************************/
+
+@media only screen and (max-width:60em) {
+  .hero-section {
+    flex-direction: column-reverse;
+  }
+}
+
+/*************************************************************
+*                                    conference page hero
+*************************************************************/
+.conference-hero {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  background-image: url('/images/bg-conference.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 360px;
+  border: 1px solid #CAC4CF;
+  border-radius: 14px;
+}
+
+.conference-details {
+  color: #fff;
+  background-color: #cdbdff9e;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.conference-title h2 {
+  font-size: 3.5625em;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+@media only screen and (max-width:52.5em) {
+  .conference-title h2 {
+    font-size: 2.8125em;
+  }
+}
+
+@media only screen and (max-width:37.5em) {
+  .conference-hero {
+    flex-direction: column;
+  }
+
+  .conference-title h2 {
+    font-size: 2.25em;
+  }
 }
