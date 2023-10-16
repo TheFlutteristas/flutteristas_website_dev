@@ -23,8 +23,8 @@ import 'package:http/http.dart' as http;
 //   }
 // }
 
-class AgendaTalkList extends StatefulComponent {
-  const AgendaTalkList({
+class SpeakersList extends StatefulComponent {
+  const SpeakersList({
     super.key,
     required this.projectId,
   });
@@ -32,38 +32,39 @@ class AgendaTalkList extends StatefulComponent {
   final String projectId;
 
   @override
-  State<AgendaTalkList> createState() => _AgendaState();
+  State<SpeakersList> createState() => _SpeakersState();
 }
 
-class _AgendaState extends State<AgendaTalkList> {
-  late Future<List<AgendaItem>> _futureAgendaItems;
+class _SpeakersState extends State<SpeakersList> {
+  late Future<List<SpeakerItem>> _futureSpeakerItems;
 
   @override
   void initState() {
     super.initState();
-    _futureAgendaItems = fetchAgenda();
+    _futureSpeakerItems = fetchSpeaker();
   }
 
-  Future<List<AgendaItem>> fetchAgenda() async {
+  Future<List<SpeakerItem>> fetchSpeaker() async {
     // see: https://firebase.google.com/docs/reference/rest/database
     final url =
-        "https://${component.projectId}.firebaseio.com/conference_agenda.json";
+        "https://${component.projectId}.firebaseio.com/speakers/conference_year/2023.json";
+    // https: //flutteristas-website-dev-default-rtdb.firebaseio.com/speakers/conference_year/2023
     final resp = await http.get(Uri.parse(url));
     final data = json.decode(resp.body);
     return [
       ...(data as List) //
           .cast<Map<String, dynamic>>()
-          .map(AgendaItem.fromJson),
+          .map(SpeakerItem.fromJson),
     ];
   }
 
   @override
   Iterable<Component> build(BuildContext context) sync* {
-    yield FutureBuilder<List<AgendaItem>>(
-      initialData: <AgendaItem>[],
-      future: _futureAgendaItems,
+    yield FutureBuilder<List<SpeakerItem>>(
+      initialData: <SpeakerItem>[],
+      future: _futureSpeakerItems,
       builder: (BuildContext context,
-          AsyncSnapshot<List<AgendaItem>> snapshot) sync* {
+          AsyncSnapshot<List<SpeakerItem>> snapshot) sync* {
         for (final (index, item) in snapshot.requireData.indexed) {
           yield div(
             id: 'item-$index',
@@ -81,19 +82,20 @@ class _AgendaState extends State<AgendaTalkList> {
             [
               p(
                 [
-                  text('Title: '),
-                  strong([text(item.title)]),
+                  text('Name: '),
+                  // text(item.toString()),
+                  strong([text(item.name)]),
                   br(),
-                  text('Speaker: '),
-                  strong([text(item.speaker)]),
+                  // text('Bio: '),
+                  // strong([text(item.bio)]),
                   br(),
-                  text(item.description),
+                  text(item.professional_role),
                   br(),
-                  text(
-                    'at: '
-                    //'${DateFormat.yMMMd().format(item.time)} at '
-                    '${DateFormat.Hms().format(item.time)} UTC',
-                  ),
+                  // text(
+                  //   'at: '
+                  //   //'${DateFormat.yMMMd().format(item.time)} at '
+                  //   '${DateFormat.Hms().format(item.time)} UTC',
+                  // ),
                 ],
               ),
             ],
@@ -104,28 +106,25 @@ class _AgendaState extends State<AgendaTalkList> {
   }
 }
 
-class AgendaItem {
-  const AgendaItem({
-    required this.title,
-    required this.speaker,
-    required this.description,
-    required this.time,
+class SpeakerItem {
+  const SpeakerItem({
+    // required this.conference_year,
+    required this.name,
+    required this.professional_role,
   });
 
-  final String title;
-  final String speaker;
-  final String description;
-  final DateTime time;
+  // final String conference_year;
+  final String name;
+  final String professional_role;
 
-  static AgendaItem fromJson(Map<String, dynamic> json) {
-    return AgendaItem(
-      title: json['title'] as String,
-      speaker: json['speaker'] as String,
-      description: json['description'] as String,
-      time: DateTime.parse(json['time'] as String),
+  static SpeakerItem fromJson(Map<String, dynamic> json) {
+    return SpeakerItem(
+      // conference_year: json['conference_year'] as String,
+      name: json['name'] as String,
+      professional_role: json['professional_role'] as String,
     );
   }
 
   @override
-  String toString() => 'AgendaItem{$title, $time}';
+  String toString() => 'SpeakerItem{}';
 }

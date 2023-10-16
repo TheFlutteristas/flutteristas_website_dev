@@ -20,17 +20,17 @@ import 'package:jaspr_router/jaspr_router.dart';
 final routes = [
   WelcomePage.route,
   FlutteristasConferencePage.route,
-  //AgendaPage.route,
-  TwoSectionPage.route,
-  Column2Page.route,
-  Column3Page.route,
-  ProductSummaryPage.route,
-  ProductPageOne.route,
-  ProductPageWithNote.route,
-  FollowUsPage.route,
-  //ContactUsPage.route,
-  CodeOfConduct.route,
-  PrivacyPolicyPage.route,
+  // AgendaPage.route,
+  // TwoSectionPage.route,
+  // Column2Page.route,
+  // Column3Page.route,
+  // ProductSummaryPage.route,
+  // ProductPageOne.route,
+  // ProductPageWithNote.route,
+  // FollowUsPage.route,
+  // ContactUsPage.route,
+  // CodeOfConduct.route,
+  // PrivacyPolicyPage.route,
 ];
 
 class App extends StatelessComponent {
