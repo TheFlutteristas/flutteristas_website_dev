@@ -323,7 +323,6 @@ p.hero-text {
 
 .hero-section {
   margin-top: 100px;
-  margin-bottom: 100px;
   gap: 20px;
 }
 
@@ -712,8 +711,8 @@ div #welcome-items {
 }
 
 .conference-details {
-  color: #fff;
-  background-color: #cdbdff9e;
+  color: #20005E;
+  background-color: #e8ddffeb;
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 14px;
