@@ -1,4 +1,5 @@
 import 'package:flutteristas/pages/agenda_page.dart';
+import 'package:flutteristas/pages/speakers_page.dart';
 // import 'package:jaspr/components.dart';
 import 'package:jaspr/html.dart';
 import 'package:jaspr_router/jaspr_router.dart';
@@ -28,7 +29,7 @@ class FlutteristasConferencePage extends StatelessComponent {
       ], [
         p([
           img(src: '/images/calendar_month_FILL0_wght400_GRAD0_opsz24.svg'),
-          Text('Date: 11 November-2023 ')
+          Text('Date: 11 November 2023 ')
         ]),
         p([
           img(src: '/images/location_on_FILL0_wght400_GRAD0_opsz24.svg'),
@@ -55,6 +56,10 @@ class FlutteristasConferencePage extends StatelessComponent {
     );
 
     // yield AgendaTalkList(
+    //   projectId: 'flutteristas-website-dev-default-rtdb',
+    // );
+
+    // yield SpeakersList(
     //   projectId: 'flutteristas-website-dev-default-rtdb',
     // );
   }
