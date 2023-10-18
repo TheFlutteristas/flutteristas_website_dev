@@ -1,6 +1,8 @@
 import 'dart:html';
 
 import 'package:flutteristas/layout/top_menu.dart';
+import 'package:flutteristas/pages/code_of_conduct.dart';
+import 'package:flutteristas/pages/privacy_page.dart';
 import 'package:jaspr/html.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
@@ -76,6 +78,32 @@ class _PageFrameState extends State<PageFrame> {
         ]),
         footer([
           followUsSection(),
+          div(classes: [
+            'privacy-section'
+          ], [
+            a(
+              href: PrivacyPolicyPage.route.path,
+              events: {
+                'click': (event) {
+                  Router.of(context).push(PrivacyPolicyPage.route.path);
+                  (event as Event).preventDefault();
+                },
+              },
+              [text('Privacy policy')],
+            ),
+            a(
+              href: CodeOfConduct.route.path,
+              events: {
+                'click': (event) {
+                  Router.of(context).push(CodeOfConduct.route.path);
+                  (event as Event).preventDefault();
+                },
+              },
+              [
+                text('Code of conduct'),
+              ],
+            )
+          ]),
           p([
             text('Copyright © 2023 Flutteristas.org.  All rights reserved. ')
           ]),
@@ -127,7 +155,13 @@ class _PageFrameState extends State<PageFrame> {
             classes: ['social-icon'],
             src: '/images/github-color-svgrepo-com.svg',
           )
-        ], href: 'https://github.com/TheFlutteristas')
+        ], href: 'https://github.com/TheFlutteristas'),
+        a([
+          img(
+            classes: ['social-icon'],
+            src: '/images/facebook-svgrepo-com.svg',
+          )
+        ], href: 'https://www.facebook.com/people/Flutteristas/61552442970613/')
       ])
     ]);
   }
