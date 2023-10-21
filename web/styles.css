@@ -828,6 +828,10 @@ div #welcome-items {
   fill: #000;
 }
 
+.social-bar .empty-span{
+  display:none;
+}
+
 .SpeakerItem .speaker-bio {
   width: 250px;
   background-color: #F2DAFF;

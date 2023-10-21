@@ -83,7 +83,9 @@ class _SpeakersState extends State<SpeakersList> {
   }
 
   Component social_icon(MapEntry<dynamic, dynamic> item) {
-    if (item.value != null) {
+    if (item.value == '') {
+      return span(classes: ['empty-span'], []);
+    } else {
       switch (item.key as String) {
         case 'x':
           return a(
@@ -114,8 +116,6 @@ class _SpeakersState extends State<SpeakersList> {
         default:
           return span([]);
       }
-    } else {
-      throw Exception('no social value found');
     }
   }
 }
