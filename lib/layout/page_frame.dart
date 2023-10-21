@@ -125,43 +125,52 @@ class _PageFrameState extends State<PageFrame> {
             classes: ['social-icon'],
             src: '/images/Linkedin.svg',
           )
-        ], href: 'https://www.linkedin.com/company/flutteristas/'),
+        ],
+            target: Target.blank,
+            href: 'https://www.linkedin.com/company/flutteristas/'),
         a([
           img(
             classes: ['social-icon'],
             src: '/images/x-logo.svg',
           )
-        ], href: 'https://twitter.com/flutteristas'),
+        ], target: Target.blank, href: 'https://twitter.com/flutteristas'),
         a([
           img(
             classes: ['social-icon'],
             src: '/images/Mastodon.svg',
           )
-        ], href: 'https://fluttercommunity.social/@Flutteristas'),
+        ],
+            target: Target.blank,
+            href: 'https://fluttercommunity.social/@Flutteristas'),
         a([
           img(
             classes: ['social-icon'],
             src: '/images/instagram.svg',
           )
-        ], href: 'https://www.instagram.com/flutteristas/'),
+        ],
+            target: Target.blank,
+            href: 'https://www.instagram.com/flutteristas/'),
         a([
           img(
             classes: ['social-icon'],
             src: '/images/youtube.svg',
           )
-        ], href: 'https://www.youtube.com/@Flutteristas'),
+        ], target: Target.blank, href: 'https://www.youtube.com/@Flutteristas'),
         a([
           img(
             classes: ['social-icon'],
             src: '/images/github-color-svgrepo-com.svg',
           )
-        ], href: 'https://github.com/TheFlutteristas'),
+        ], target: Target.blank, href: 'https://github.com/TheFlutteristas'),
         a([
           img(
             classes: ['social-icon'],
             src: '/images/facebook-svgrepo-com.svg',
           )
-        ], href: 'https://www.facebook.com/people/Flutteristas/61552442970613/')
+        ],
+            target: Target.blank,
+            href:
+                'https://www.facebook.com/people/Flutteristas/61552442970613/')
       ])
     ]);
   }
