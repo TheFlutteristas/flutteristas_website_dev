@@ -115,6 +115,18 @@ header>div {
 }
 
 /*************************************************************
+*                                          page not found
+*************************************************************/
+
+.not-found{
+  background-image:url("/images/page-not-found.png"); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width:100%;
+}
+
+/*************************************************************
 *                                      top-banner
 *************************************************************/
 /* #top-banner {
@@ -759,7 +771,9 @@ div #welcome-items {
     font-size: 2.25em;
   }
 }
-
+/*************************************************************
+*                                    speaker page 
+*************************************************************/
 
 .speakers-container {
   background: linear-gradient(94deg, rgba(205, 189, 255, 1) 24%, rgba(225, 182, 255, 1) 70%);
@@ -818,6 +832,10 @@ div #welcome-items {
   gap: 10px;
 }
 
+.social-bar .empty-span{
+  display:none;
+}
+
 /* .SpeakerItem .social-bar a{
   font-size: 20px;
   color:#6745C7;
@@ -826,10 +844,6 @@ div #welcome-items {
 .SpeakerItem .social-bar img {
   width: 20px;
   fill: #000;
-}
-
-.social-bar .empty-span{
-  display:none;
 }
 
 .SpeakerItem .speaker-bio {

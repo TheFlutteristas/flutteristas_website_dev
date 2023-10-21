@@ -7,11 +7,11 @@ We utilize [Jaspr](https://pub.dev/packages/jaspr) to provide a more Flutter cen
 
 ## Prerequisites
 
-Install the webdev tool
-
+Install the [webdev tool](https://dart.dev/tools/webdev)
 
 ```sh
-dart pub global activate webdev```
+dart pub global activate webdev
+```
 
 ## Run locally with
 
