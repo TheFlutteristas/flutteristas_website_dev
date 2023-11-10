@@ -14,8 +14,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.13.8'
-      - run: dart pub global activate webdev && webdev build
+      - run: dart pub global activate webdev && flutter pub get && webdev build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
