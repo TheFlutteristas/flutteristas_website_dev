@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutteristas/modules/SpeakerItem.dart';
 import 'package:jaspr/components.dart';
 import 'package:jaspr/html.dart';
 import 'package:http/http.dart' as http;
@@ -30,11 +31,16 @@ class _SpeakersState extends State<SpeakersList> {
         "https://${component.projectId}.firebaseio.com/speakers/conference_year/2023.json";
     final resp = await http.get(Uri.parse(url));
     final data = json.decode(resp.body);
-    return [
-      ...(data as List) //
-          .cast<Map<String, dynamic>>()
-          .map(SpeakerItem.fromJson),
-    ];
+    var dataFiltered = (data as List).nonNulls.toList();
+    List<SpeakerItem> speakerList = dataFiltered
+        .cast<Map<String, dynamic>>()
+        .map((d) => SpeakerItem.fromJson(d))
+        .toList();
+    speakerList.sort((a, b) {
+      return a.name.toLowerCase().compareTo(b.name.toLowerCase());
+    });
+
+    return speakerList;
   }
 
   @override
@@ -52,7 +58,15 @@ class _SpeakersState extends State<SpeakersList> {
               classes: ['SpeakerItem'],
               id: 'item-$index',
               [
-                img(classes: ['speaker-photo'], src: item.photoLink),
+                img(
+                    classes: ['speaker-photo'],
+                    src: item.photoLink,
+                    alt: 'speaker-photo'),
+                div(classes: [
+                  'social-bar'
+                ], [
+                  for (var item in socialIcons.entries) socialIcon(item),
+                ]),
                 h3(classes: [
                   'speaker-name'
                 ], [
@@ -65,15 +79,18 @@ class _SpeakersState extends State<SpeakersList> {
                 ]),
                 p(classes: ['speaker-role'], [text(item.professionalRole)]),
                 div(classes: [
-                  'social-bar'
+                  'title-talk'
                 ], [
-                  for (var item in socialIcons.entries) social_icon(item),
-                  // a(
-                  //     href: socialIcons['x'] as String,
-                  //     target: Target.blank,
-                  //     [img(src: '/images/x-logo.svg', width: 16)]),
+                  p(classes: [
+                    'talk-container'
+                  ], [
+                    img(
+                        src: '/images/female-user-talk-chat-svgrepo-com.svg',
+                        alt: 'speaker-icon'),
+                    span(classes: ['talk-lable'], [text('Talk title: ')]),
+                    span(classes: ['talk-title'], [text(item.titleTalk)])
+                  ]),
                 ]),
-                // p(classes: ['speaker-bio'], [text(item.bio)]),
               ],
             );
           }
@@ -82,7 +99,7 @@ class _SpeakersState extends State<SpeakersList> {
     ]);
   }
 
-  Component social_icon(MapEntry<dynamic, dynamic> item) {
+  Component socialIcon(MapEntry<dynamic, dynamic> item) {
     if (item.value == '') {
       return span(classes: ['empty-span'], []);
     } else {
@@ -91,63 +108,30 @@ class _SpeakersState extends State<SpeakersList> {
           return a(
               href: item.value as String,
               target: Target.blank,
-              [img(src: '/images/x-logo.svg')]);
+              [img(src: '/images/x-logo.svg', alt: 'twitter-icon')]);
 
         case 'linkedin':
           return a(
               href: item.value as String,
               target: Target.blank,
-              [img(src: '/images/Linkedin.svg')]);
+              [img(src: '/images/Linkedin.svg', alt: 'linkedin-icon')]);
         case 'github':
-          return a(
-              href: item.value as String,
-              target: Target.blank,
-              [img(src: '/images/github-color-svgrepo-com.svg')]);
+          return a(href: item.value as String, target: Target.blank, [
+            img(src: '/images/github-color-svgrepo-com.svg', alt: 'github-icon')
+          ]);
         case 'medium':
           return a(
               href: item.value as String,
               target: Target.blank,
-              [img(src: '/images/medium-svgrepo-com.svg')]);
+              [img(src: '/images/medium-svgrepo-com.svg', alt: 'medium-icon')]);
         case 'youtube':
           return a(
               href: item.value as String,
               target: Target.blank,
-              [img(src: '/images/youtube.svg')]);
+              [img(src: '/images/youtube.svg', alt: 'youtube-icon')]);
         default:
           return span([]);
       }
     }
   }
-}
-
-class SpeakerItem {
-  const SpeakerItem(
-      {
-      // required this.conference_year,
-      required this.name,
-      required this.bio,
-      required this.photoLink,
-      required this.professionalRole,
-      required this.socialMedia});
-
-  // final String conference_year;
-  final String name;
-  final String bio;
-  final String photoLink;
-  final String professionalRole;
-  final Map socialMedia;
-
-  static SpeakerItem fromJson(Map<String, dynamic> json) {
-    return SpeakerItem(
-      // conference_year: json['conference_year'] as String,
-      name: json['name'] as String,
-      bio: json['bio'] as String,
-      photoLink: json['photo'] as String,
-      socialMedia: json['socialmedia'] as Map,
-      professionalRole: json['professional_role'] as String,
-    );
-  }
-
-  @override
-  String toString() => 'SpeakerItem{}';
 }

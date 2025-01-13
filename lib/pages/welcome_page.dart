@@ -1,5 +1,4 @@
 import 'dart:html';
-// import 'package:flutteristas/pages/code_of_conduct.dart';
 import 'package:flutteristas/pages/code_of_conduct.dart';
 import 'package:jaspr/components.dart';
 import 'package:jaspr/html.dart';
@@ -52,12 +51,82 @@ class WelcomePage extends StatelessComponent {
       div([
         img(
           src: '/images/FlutterInteract-2019.jpg',
+          alt: 'flutteristas-image',
           styles: Styles.box(
             width: Unit.percent(100),
             radius: BorderRadius.circular(Unit.pixels(14.0)),
           ),
         )
       ])
+    ]);
+    yield Spacer(height: Unit.pixels(100));
+    yield h2(
+      [
+        text('Why join?'),
+      ],
+    );
+    yield div(classes: [
+      'activities-section'
+    ], [
+      div(classes: [
+        'activities-item'
+      ], [
+        img(
+            classes: ['activities-icon'],
+            src: '/images/4857010.png',
+            alt: 'activities-icon'),
+        h3([text('Meetings')]),
+        p(classes: [
+          'activities-text'
+        ], [
+          text('Monthly meetings to connect and share news and achievements')
+        ])
+      ]),
+      div(classes: [
+        'activities-item'
+      ], [
+        img(
+            classes: ['activities-icon'],
+            src: '/images/6491438.png',
+            alt: 'activities-icon'),
+        h3([text('Meet the Flutter Team')]),
+        p(classes: [
+          'activities-text'
+        ], [
+          text(
+              'Guests from Google\'s Flutter team come and meet with us occasionally to share news, tips and answer questions.')
+        ])
+      ]),
+      div(classes: [
+        'activities-item'
+      ], [
+        img(
+            classes: ['activities-icon'],
+            src: '/images/4892807.png',
+            alt: 'activities-icon'),
+        h3([text('Volunteering & Experiences')]),
+        p(classes: [
+          'activities-text'
+        ], [
+          text(
+              'Flutteristas volunteer their time and talents in producing outstanding Flutterista conference experiences that reflect our members\' core competencies.')
+        ])
+      ]),
+      div(classes: [
+        'activities-item'
+      ], [
+        img(
+            classes: ['activities-icon'],
+            src: '/images/7037084.png',
+            alt: 'activities-icon'),
+        h3([text('Speaker\'s training')]),
+        p(classes: [
+          'activities-text'
+        ], [
+          text(
+              'Part of the conference experience is training conducted for the speakers by professionals to let them shine in their talk and gain attention.')
+        ])
+      ]),
     ]);
     yield Spacer(height: Unit.pixels(100));
     yield h2(
@@ -77,11 +146,11 @@ class WelcomePage extends StatelessComponent {
         ], [
           div([
             img(
-              src: '/images/number-1-svgrepo-com.svg',
-              styles: Styles.box(
-                width: Unit.pixels(100),
-              ),
-            )
+                src: '/images/number-1-svgrepo-com.svg',
+                styles: Styles.box(
+                  width: Unit.pixels(100),
+                ),
+                alt: 'number-1-image')
           ]),
           div([
             p([
@@ -97,20 +166,20 @@ class WelcomePage extends StatelessComponent {
         ], [
           div([
             img(
-              classes: ['arrow-1'],
-              src: '/images/Arrow15.png',
-              styles: Styles.box(
-                height: Unit.pixels(100),
-              ),
-            )
+                classes: ['arrow-1'],
+                src: '/images/Arrow15.png',
+                styles: Styles.box(
+                  height: Unit.pixels(100),
+                ),
+                alt: 'arrow-image')
           ]),
           div([
             img(
-              src: '/images/number-2-svgrepo-com.svg',
-              styles: Styles.box(
-                width: Unit.pixels(100),
-              ),
-            )
+                src: '/images/number-2-svgrepo-com.svg',
+                styles: Styles.box(
+                  width: Unit.pixels(100),
+                ),
+                alt: 'number-2-image')
           ]),
           div([
             p([
@@ -121,12 +190,12 @@ class WelcomePage extends StatelessComponent {
           ]),
           div([
             img(
-              classes: ['arrow-2'],
-              src: '/images/Arrow07.png',
-              styles: Styles.box(
-                height: Unit.pixels(100),
-              ),
-            )
+                classes: ['arrow-2'],
+                src: '/images/Arrow07.png',
+                styles: Styles.box(
+                  height: Unit.pixels(100),
+                ),
+                alt: 'arrow-image')
           ])
         ]),
         div(classes: [
@@ -135,11 +204,11 @@ class WelcomePage extends StatelessComponent {
         ], [
           div([
             img(
-              src: '/images/number-3-svgrepo-com.svg',
-              styles: Styles.box(
-                width: Unit.pixels(100),
-              ),
-            )
+                src: '/images/number-3-svgrepo-com.svg',
+                styles: Styles.box(
+                  width: Unit.pixels(100),
+                ),
+                alt: 'number-3-image')
           ]),
           div([
             p([
@@ -168,7 +237,7 @@ class WelcomePage extends StatelessComponent {
       div(
         classes: ['join-section'],
         [
-          img(src: '/images/flutteristas-dash.png'),
+          img(src: '/images/flutteristas-dash.png', alt: 'dash'),
           a(
             classes: ['hero-button'],
             href:
