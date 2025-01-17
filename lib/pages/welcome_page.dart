@@ -75,7 +75,7 @@ class WelcomePage extends StatelessComponent {
         ],
             target: Target.blank,
             href:
-                'https://bsky.app/profile/flutteristas.org')
+                'https://bsky.app/profile/flutteristascon.flutter.community')
               
         ]),
         // a(
