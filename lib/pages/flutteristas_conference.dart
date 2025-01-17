@@ -26,7 +26,7 @@ class FlutteristasConferencePage extends StatelessComponent {
       div(classes: [
         'conference-title'
       ], [
-        h2(classes: ['conference-text'], [Text('Flutteristas'), br(),Text('Conference 2025')]),
+        h2(classes: ['conference-text'], [Text('Flutteristas'), br(),Text('Conference 2023')]),
       ]),
     ]);
     yield div(classes: [
