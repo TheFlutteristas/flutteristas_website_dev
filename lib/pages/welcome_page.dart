@@ -22,8 +22,7 @@ class WelcomePage extends StatelessComponent {
         'conference-title'
       ], [
         p(classes: ['conference-coming-soon'], [Text('Coming Soon!')]),
-        h2(classes: ['conference-text'], [Text('Flutteristas')]),
-        h2(classes: ['conference-text'], [Text('Conference 2025')])
+        h2(classes: ['conference-text'], [Text('Flutteristas'), br(),Text('Conference 2025')]),
       ]),
       div(classes: [
         'conference-details'
@@ -39,8 +38,7 @@ class WelcomePage extends StatelessComponent {
               src: '/images/location_on_FILL0_wght400_GRAD0_opsz24.svg',
               alt: 'location-icon'),
           Text('Location: '),
-          a([Text('Live Stream on YouTube')],
-              target: Target.blank,
+          a([Text('coming soon')],
               href: '#'),
           a([
             img(
@@ -80,11 +78,11 @@ class WelcomePage extends StatelessComponent {
                 'https://bsky.app/profile/flutteristas.org')
               
         ]),
-        a(
-            classes: ['hero-button'],
-            target: Target.blank,
-            href: '#',
-            [text('RSVP Now')])
+        // a(
+        //     classes: ['hero-button'],
+        //     target: Target.blank,
+        //     href: '#',
+        //     [text('RSVP Now')])
             
       ]),
     ]);
